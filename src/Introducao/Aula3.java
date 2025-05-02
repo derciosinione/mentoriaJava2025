@@ -1,6 +1,6 @@
-package Aula2;
+package Introducao;
 
-public class Aula2 {
+public class Aula3 {
     public static void main(String[] args) {
         // preciso saber:
         // nome do aluno, idade, curso, turma, ano, disciplina, primeira nota, segunda nota.
@@ -16,8 +16,6 @@ public class Aula2 {
 
         mediaNota = (primeiraNota + segundaNota)/2;
 
-//        mediaNota--;
-
         System.out.println("Nome: " + nome);
         System.out.println("Idade: " + idade);
         System.out.println("Curso: " + curso);
@@ -28,14 +26,31 @@ public class Aula2 {
         System.out.println("SegundaNota: " + segundaNota);
         System.out.println("MediaNota: " + mediaNota);
 
-        if (mediaNota >= 10) {
-            System.out.println("O Aluno " + nome +" esta Aprovado!");
-        }
-        else if (mediaNota >= 7 && mediaNota < 10) {
-            System.out.println("O Aluno " + nome +" em recuperacao!");
-        }
-        else {
-            System.out.println("O Aluno " + nome +" esta reprovado!");
+        String status;
+
+        if (mediaNota >= 10 && mediaNota <= 20)
+            status = "Aprovado";
+        else if (mediaNota >= 7 && mediaNota < 10)
+            status = "Recuperacao";
+        else
+            status = "Reprovado";
+
+        switch (status){
+            case "Aprovado":
+                System.out.println("O Aluno " + nome +" esta Aprovado!");
+                System.out.println("Parabens");
+                break;
+            case "Recuperacao":
+                System.out.println("O Aluno " + nome +" em recuperacao!");
+                System.out.println("Nao desanima, ainda tem mais uma chance");
+                break;
+            case "Reprovado":
+                System.out.println("O Aluno " + nome +" esta reprovado!");
+                System.out.println("Tenta mais uma vez proximo ano");
+                break;
+            default:
+                System.out.println("Opcao invalida!");
+                break;
         }
     }
 }
